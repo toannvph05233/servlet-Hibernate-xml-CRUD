@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Cấu hình JDBC -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/minishop0324</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">12345678</property>
+
+        <!-- Cấu hình dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Cấu hình show SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Cấu hình cập nhật tự động -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Cấu hình entity package -->
+        <mapping package="com.javaBean" />
+
+        <mapping class="com.javaBean.Category" />
+        <mapping class="com.javaBean.Product" />
+
+    </session-factory>
+</hibernate-configuration>
